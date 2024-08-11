@@ -192,7 +192,7 @@ export const PROJECTS = [
                     },
                     {
                       name:"Some Amazing Python Programs - The Power of Python",
-                      link:"https://www.youtube.com/watch?v=CpCN9lTFHc4",
+                      link:"https://www.youtube.com/watch?v=f9Aje_cN_CY",
                   },
                 ],
             },
@@ -223,7 +223,7 @@ export const PROJECTS = [
                 videos:[
                     {
                         name:"Python DSA Basics",
-                        link:"",
+                        link:"https://www.youtube.com/watch?v=MLqHDsBOC4c",
                     },
                 ],
             },
@@ -233,7 +233,7 @@ export const PROJECTS = [
                 videos:[
                     {
                         name:"JAVA Basics",
-                        link:"",
+                        link:"https://www.youtube.com/watch?v=bm0OyhwFDuY&list=PLsyeobzWxl7pe_IiTfNyr55kwJPWbgxB5",
                     },
                 ],
             },
