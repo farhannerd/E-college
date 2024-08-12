@@ -188,11 +188,11 @@ export const PROJECTS = [
                 videos:[
                     {
                         name:"Introduction to Programming & Python",
-                        link:"https://www.youtube.com/watch?v=7wnove7K-ZQ&list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg",
+                        link:"https://www.youtube.com/watch?v=7wnove7K-ZQ&t=5s",
                     },
                     {
                       name:"Some Amazing Python Programs - The Power of Python",
-                      link:"https://www.youtube.com/watch?v=f9Aje_cN_CY",
+                      link:"https://www.youtube.com/watch?v=Tto8TS-fJQU",
                   },
                 ],
             },
@@ -202,11 +202,11 @@ export const PROJECTS = [
                 videos:[
                     {
                         name:"Introduction to DBMS (Database Management System) With Real life examples",
-                        link:"https://www.youtube.com/watch?v=_UZLrD_R0T4",
+                        link:"https://www.youtube.com/watch?v=3EJlovevfcA&t=4s",
                     },
                     {
                       name:" File System vs DBMS | Disadvantages of File System | DBMS Advantages",
-                      link:"https://www.youtube.com/watch?v=ZtVw2iuFI2w&list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y&index=3",
+                      link:"https://www.youtube.com/watch?v=ZtVw2iuFI2w&t=88s",
                   },
                 ],
             },
@@ -223,7 +223,35 @@ export const PROJECTS = [
                 videos:[
                     {
                         name:"Python DSA Basics",
-                        link:"https://www.youtube.com/watch?v=MLqHDsBOC4c",
+                        link:"https://www.youtube.com/watch?v=5_5oE5lgrhw",
+                    },
+                    {
+                      name:"Time Complexity and Big O Notation ",
+                      link:"https://www.youtube.com/watch?v=vgSKOMsjLbc",
+                    },
+                    {
+                      name:"Asymptotic Notations: Big O, Big Omega and Big Theta Explained",
+                      link:"https://www.youtube.com/watch?v=1OTX-WXQHCQ",
+                    },
+                    {
+                      name:"Best Case, Worst Case and Average Case Analysis of an Algorithm",
+                      link:"https://www.youtube.com/watch?v=5g7K86jYto8",
+                    },
+                    {
+                      name:"How to Calculate Time Complexity of an Algorithm + Solved Questions",
+                      link:"https://www.youtube.com/watch?v=STL8ESuETmM",
+                    },
+                    {
+                      name:"Arrays and Abstract Data Type in Data Structure",
+                      link:"https://www.youtube.com/watch?v=bR0NYdmMg94",
+                    },
+                    {
+                      name:"Array as An Abstract Data Type in Data Structures",
+                      link:"https://www.youtube.com/watch?v=-sktNalfrE0",
+                    },
+                    {
+                      name:"Operations on Arrays in Data Structures: Traversal, Insertion, Deletion and Searching",
+                      link:"https://www.youtube.com/watch?v=p5TDnxAYAZY",
                     },
                 ],
             },
@@ -232,9 +260,25 @@ export const PROJECTS = [
                 name:"JAVA",
                 videos:[
                     {
-                        name:"JAVA Basics",
-                        link:"https://www.youtube.com/watch?v=bm0OyhwFDuY&list=PLsyeobzWxl7pe_IiTfNyr55kwJPWbgxB5",
+                        name:"Java Development Kit (JDK) Setup",
+                        link:"https://www.youtube.com/watch?v=WRISYpKhIrc",
                     },
+                    {
+                      name:"First Code in Java",
+                      link:"https://www.youtube.com/watch?v=tSqNBjGacYk",
+                  },
+                  {
+                    name:" How Java Works",
+                    link:"https://www.youtube.com/watch?v=NHrsLjhjmi4",
+                },
+                {
+                  name:"Variables in Java",
+                  link:"https://www.youtube.com/watch?v=9RCuKrze_-k",
+              },
+                  {
+                    name:"Data types in Java",
+                    link:"https://www.youtube.com/watch?v=Le25I331_yU",
+                },
                 ],
             },
 
