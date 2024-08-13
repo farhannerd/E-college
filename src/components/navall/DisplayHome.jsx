@@ -4,6 +4,7 @@ import Navbar from '../Navbar'
 import Project from './category/Project'
 import Exam from './category/Exam'
 import Mentors from './category/Mentors'
+import Advertisement from './category/Advertisement'
 
 const DisplayHome = () => {
   return (
@@ -12,6 +13,7 @@ const DisplayHome = () => {
     <Hero/>
     <Project/>
     <Exam/>
+    <Advertisement/>
     <Mentors/>
     </>
   )
