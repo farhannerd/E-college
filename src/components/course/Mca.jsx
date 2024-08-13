@@ -7,6 +7,8 @@ const Mca = () => {
   const[sem,setSem]=useState("--sem--")
   const[paper,setPaper]=useState("--paper--")
   const[video,setVideo]=useState("--video--")
+  const[link,setLink]=useState(false)
+  const[lock,setLock]=useState(false)
   const[papers,setPapers]=useState([])
   const[videos,setVideos]=useState([])
   const changeSem=(event)=>{
@@ -18,6 +20,7 @@ const Mca = () => {
     setVideos(papers.find(paper=>paper.name===event.target.value).videos)
   }
   const changeVideo=(event)=>{
+    setLink(true)
     setVideo(event.target.value)
   }
   // useEffect((event)=>{
@@ -65,13 +68,16 @@ const Mca = () => {
               ))}
             </select>
             </div>
-            
-            <div className='lg:hidden mt-4 mb-4'>
+            {lock? link?<div className='lg:hidden mt-4 mb-4'>
               <ReactPlayer url={video} controls={true} width={300} height={250}/>
-            </div>
-            <div className='lg:block hidden mt-4 mb-4'>
+            </div> :<h2 className='mt-3 mb-3' >Select Video</h2>:<h2 className='mt-3 mb-3'>You need to subscribe</h2>}
+            {lock? link?<div className='lg:block hidden mt-4 mb-4'>
               <ReactPlayer url={video} controls={true} width={640} height={360}/>
-            </div>
+            </div>:"" :""}
+            
+            {lock?"":<button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full ' onClick={()=>setLock(true)}>
+              subscribe
+            </button>}
           
         </div>
 
