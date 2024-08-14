@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar'
 import { MCA } from '../../assets/Assets'
 import ReactPlayer from 'react-player'
+import axios from 'axios'
 
 const Mca = () => {
   const[sem,setSem]=useState("--sem--")
@@ -11,6 +12,9 @@ const Mca = () => {
   const[lock,setLock]=useState(false)
   const[papers,setPapers]=useState([])
   const[videos,setVideos]=useState([])
+
+  const[question,setQuestion]=useState('')
+  const[answer,setAnswer]=useState('')
   const changeSem=(event)=>{
     setSem(event.target.value)
     setPapers(MCA.find(sem=>sem.name===event.target.value).papers)
@@ -23,11 +27,15 @@ const Mca = () => {
     setLink(true)
     setVideo(event.target.value)
   }
-  // useEffect((event)=>{
-    
-  //     setVideo(event.target.value)
-    
-  // },[video])
+  const generateAnswer=async()=>{
+    setAnswer("loading...")
+   const response= await axios({
+      url:"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyCAEbKVzd8GkiF4oXqtZOLzYzByakMijaU",
+      method:"post",
+      data:{"contents":[{"parts":[{"text":question}]}]},
+    });
+    setAnswer(response['data']['candidates'][0]['content']['parts'][0]['text']);
+  }
   return (
     <div>
         <Navbar/>
@@ -41,7 +49,7 @@ const Mca = () => {
 
         <div className=' flex  flex-col sm:flex-row md:flex-col items-center sm:items-center sm:justify-center sm:gap-10 w-full text-black'>
           <div>
-            <h3>Select SEM</h3>
+            <h3 className=' mt-3'>Select SEM</h3>
             <select className='border-2 border-gray-400 p-2 rounded-md w-80' value={sem} onChange={changeSem}>
               <option >--sem--</option>
               {MCA.map(sem =>(
@@ -72,12 +80,20 @@ const Mca = () => {
               <ReactPlayer url={video} controls={true} width={300} height={250}/>
             </div> :<h2 className='mt-3 mb-3' >Select Video</h2>:<h2 className='mt-3 mb-3'>You need to subscribe</h2>}
             {lock? link?<div className='lg:block hidden mt-4 mb-4'>
-              <ReactPlayer url={video} controls={true} width={640} height={360}/>
+              <ReactPlayer url={video} controls={true} width={720} height={480}/>
             </div>:"" :""}
             
             {lock?"":<button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full ' onClick={()=>setLock(true)}>
               subscribe
             </button>}
+            <h2 className=' my-2 hero-ag-color p-2 rounded-3xl'>Ai Chat Bot</h2>
+
+
+           { lock?<div className=' flex flex-col items-center gap-3'>
+              <textarea value={question} onChange={(e)=>setQuestion(e.target.value)} cols="30" rows="10" className=' w-60 sm:w-[600px] rounded-xl'></textarea>
+              <button className='bg-primary text-white bg-black cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full mb-3' onClick={generateAnswer}>Generate Answer</button>
+              <p className='p-4'>{answer}</p>
+            </div>:""}
           
         </div>
 
