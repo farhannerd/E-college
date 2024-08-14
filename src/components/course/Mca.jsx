@@ -30,11 +30,12 @@ const Mca = () => {
   const generateAnswer=async()=>{
     setAnswer("loading...")
    const response= await axios({
-      url:"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyCAEbKVzd8GkiF4oXqtZOLzYzByakMijaU",
+      url:`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyCAEbKVzd8GkiF4oXqtZOLzYzByakMijaU`,
       method:"post",
       data:{"contents":[{"parts":[{"text":question}]}]},
     });
-    setAnswer(response['data']['candidates'][0]['content']['parts'][0]['text']);
+    const test=(response['data']['candidates'][0]['content']['parts'][0]['text']).split('**');
+    setAnswer(test)
   }
   return (
     <div>
