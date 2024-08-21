@@ -3,6 +3,9 @@ import Navbar from '../Navbar'
 import { MCA } from '../../assets/Assets'
 import ReactPlayer from 'react-player'
 import axios from 'axios'
+import {mcaSem} from '../../assets/mcadata.js'
+import {mcaPaper} from '../../assets/mcadata.js'
+import {mcavideos} from '../../assets/mcadata.js'
 
 const Mca = () => {
   const[sem,setSem]=useState("--sem--")
@@ -12,16 +15,16 @@ const Mca = () => {
   const[lock,setLock]=useState(false)
   const[papers,setPapers]=useState([])
   const[videos,setVideos]=useState([])
-
+  const[show,setShow]=useState(false)
   const[question,setQuestion]=useState('')
   const[answer,setAnswer]=useState('')
   const changeSem=(event)=>{
     setSem(event.target.value)
-    setPapers(MCA.find(sem=>sem.name===event.target.value).papers)
+    setPapers(mcaPaper.filter(sem=>sem.title===event.target.value))
   }
   const changePaper=(event)=>{
     setPaper(event.target.value)
-    setVideos(papers.find(paper=>paper.name===event.target.value).videos)
+    setVideos(mcavideos.filter(paper=>paper.subtitle===event.target.value))
   }
   const changeVideo=(event)=>{
     setLink(true)
@@ -44,7 +47,7 @@ const Mca = () => {
             <h1 className=' text-xl mt-3 sm:text-3xl'>MCA</h1>
         </div>
         <div className=' flex justify-center items-center px-0 sm:px-3 ' >
-        <div className=' container mt-2 mx-3 ' >
+        <div className=' container mt-2 mx-3 mb-6' >
         <div className=' overflow-hidden rounded-3xl min-h-[550px] sm:min-h-[650px] hero-bg-color flex justify-center items-center '>
         <div className=' container pb-8 sm:pb-0'>
 
@@ -53,8 +56,8 @@ const Mca = () => {
             <h3 className=' mt-3'>Select SEM</h3>
             <select className='border-2 border-gray-400 p-2 rounded-md w-80' value={sem} onChange={changeSem}>
               <option >--sem--</option>
-              {MCA.map(sem =>(
-                <option value={sem.name} key={sem.name}>{sem.name}</option>
+              {mcaSem.map(sem =>(
+                <option value={sem.title} key={sem.name}>{sem.name}</option>
               ))}
             </select>
             </div>
@@ -63,7 +66,7 @@ const Mca = () => {
             <select className='border-2 border-gray-400 p-2 rounded-md w-80' value={paper} onChange={changePaper}>
               <option >--paper--</option>
               {papers.map(paper =>(
-                <option value={paper.name} key={paper.name} >{paper.name}</option>
+                <option value={paper.subtitle} key={paper.name} >{paper.name}</option>
               ))}
             </select>
             </div>
@@ -84,18 +87,18 @@ const Mca = () => {
               <ReactPlayer url={video} controls={true} width={720} height={480}/>
             </div>:"" :""}
             
-            {lock?"":<button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full ' onClick={()=>setLock(true)}>
-              subscribe
-            </button>}
-            <h2 className=' my-2 hero-ag-color p-2 rounded-3xl'>Ai Chat Bot</h2>
+            <h2 className=' my-2 hero-ag-color p-2 rounded-3xl cursor-pointer mb-4' onClick={()=>setShow(!show)}>Ai Chat Bot</h2>
 
 
-           { lock?<div className=' flex flex-col items-center gap-3'>
+           { lock?show?<div className=' flex flex-col items-center gap-3'>
               <textarea value={question} onChange={(e)=>setQuestion(e.target.value)} cols="30" rows="10" className=' w-60 sm:w-[600px] rounded-xl'></textarea>
               <button className='bg-primary text-white bg-black cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full mb-3' onClick={generateAnswer}>Generate Answer</button>
               <p className='p-4'>{answer}</p>
-            </div>:""}
+            </div>:"":""}
           
+            {lock?"":<button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full ' onClick={()=>setLock(true)}>
+              subscribe
+            </button>}
         </div>
 
        </div> 
