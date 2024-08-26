@@ -3,20 +3,17 @@ import Navbar from "../../Navbar";
 import { MCA } from "../../../assets/Assets";
 import axios from "axios";
 import {mcaPaper} from '../../../assets/mcadata'
-import { Link, useParams } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-const Mcateacher = () => {
+
+const Mcalive = () => {
   const[papers,setPapers]=useState("")
-  const navigate= useNavigate();
   const changePaper=(event)=>{
     setPapers(event.target.value)
     
   }
-  const {id}=useParams()
   const [columns,setColumns]=useState([])
   const [records,setRecords]=useState([])
   useEffect(()=>{
-    axios.get('http://localhost:3000/mcavideos?sub=mca')
+    axios.get('http://localhost:3000/mcavideos?sub=mcaLIVE')
     .then(res => {
       setColumns(Object.keys(res.data[0]))
       setRecords(res.data)
@@ -26,7 +23,7 @@ const Mcateacher = () => {
 
   const submit=(e)=>{
     // e.preventDefault()
-    axios.post('http://localhost:3000/mcavideos',{"name":video,"link":link,"subtitle":papers,"sub":"mca","time":"00"})
+    axios.post('http://localhost:3000/mcavideos',{"name":video,"link":link,"subtitle":papers,"sub":"mcaLIVE","time":time})
     .then(res=>alert("Data is Added successfully"))
       .catch(err=>console.log(err))
   }
@@ -41,6 +38,7 @@ const Mcateacher = () => {
       .catch(err=> console.log(err))
     }
   }
+  const[time,setTime]=useState([])
   const [video, setVideo] = useState("");
   const[link,setLink]=useState("");
   const [ak, setAk] = useState(MCA[0]['papers'][0]['videos']);
@@ -50,7 +48,7 @@ const Mcateacher = () => {
     <div>
       <Navbar />
         <div className=" flex justify-center items-center p-4 ">
-        <h1 className="text-xl text-black">Add Data(MCA)</h1>
+        <h1 className="text-xl text-black">LIVE CLASS(MCA)</h1>
         </div>
       
       <div className=' flex justify-center items-center px-0 sm:px-3'>
@@ -68,8 +66,11 @@ const Mcateacher = () => {
               ))}
             </select>
             </div>
-            <h3 >ENTER VIDEO</h3>
+            <h3 >ENTER TOPIC</h3>
                 <input type="text" name="video" id="video" className="border-2 border-gray-400 p-2 rounded-md w-80 bg-slate-300" value={video} onChange={(e)=>setVideo(e.target.value)} required />
+
+                <h3 >TIME</h3>
+                <input type="text" name="time" id="time" className="border-2 border-gray-400 p-2 rounded-md w-80 bg-slate-300" value={time} onChange={(e)=>setTime(e.target.value)} required />
 
                 <h3 >ENTER LINK</h3>
                 <input type="text" name="link" id="link" className="border-2 border-gray-400 p-2 rounded-md w-80 bg-slate-300" value={link} onChange={(e)=>setLink(e.target.value)} required />
@@ -77,8 +78,8 @@ const Mcateacher = () => {
                 <button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full '>submit</button>
                 </div>
                 </form>
-                <button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full ' onClick={()=> navigate('/mcaliveok@24')}>Live-Class</button>
-                <h1>Table</h1>
+                <h4>After Complete the class press "Del" in table</h4>
+                <h1 className=" text-xl">Table</h1>
                 <div className=" flex justify-center">
                 <div className=" container mt-2">
                   <table className=" table">
@@ -92,7 +93,7 @@ const Mcateacher = () => {
                   <tbody>
                     {records.map((d,i)=>(
                       <tr key={i}>
-                          <td className="border-2 border-gray-400 p-2 rounded-md w-80 sm:w-auto bg-slate-300">{d.name}</td>
+                          <td className="border-2 border-gray-400 p-2 rounded-md w-80 sm:w-auto bg-slate-300">{d.name}{d.time}</td>
                       
                           <td className="border-2 border-gray-400 p-2 rounded-md w-80 sm:w-auto bg-slate-300">{d.subtitle}</td>
                           <td className="border-2 border-gray-400 p-2 rounded-md w-80 sm:w-auto bg-slate-300 cursor-pointer" onClick={(e)=>handelDelete(d.id)}>Del</td>
@@ -114,4 +115,4 @@ const Mcateacher = () => {
   );
 };
 
-export default Mcateacher;
+export default Mcalive;

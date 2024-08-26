@@ -6,9 +6,10 @@ import axios from 'axios'
 import {mcaSem} from '../../assets/mcadata.js'
 import {mcaPaper} from '../../assets/mcadata.js'
 import {mcavideos} from '../../assets/mcadata.js'
+import { useNavigate } from 'react-router-dom';
 
 const Mca = () => {
-
+  const navigate= useNavigate();
   useEffect(()=>{
     axios.get('http://localhost:3000/mcavideos?sub=mca')
     .then(res => {
@@ -97,6 +98,8 @@ const Mca = () => {
               <ReactPlayer url={video} controls={true} width={720} height={480}/>
             </div>:"" :""}
             
+            {lock?<button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full ' onClick={()=> navigate('/mcaClassok@24@27')}>Live-Class</button>:""}
+
             <h2 className=' my-2 hero-ag-color p-2 rounded-3xl cursor-pointer mb-4' onClick={()=>setShow(!show)}>Ai Chat Bot</h2>
 
 

@@ -6,9 +6,9 @@ import axios from 'axios'
 import {bcaSem} from '../../assets/mcadata.js'
 import {bcaPaper} from '../../assets/mcadata.js'
 import {mcavideos} from '../../assets/mcadata.js'
-
+import { useNavigate } from 'react-router-dom';
 const Bca = () => {
-
+  const navigate= useNavigate();
   useEffect(()=>{
     axios.get('http://localhost:3000/mcavideos?sub=bca')
     .then(res => {
@@ -54,7 +54,7 @@ const Bca = () => {
     <div>
         <Navbar/>
         <div className=' flex justify-center items-center'>
-            <h1 className=' text-xl mt-3 sm:text-3xl'>MCA</h1>
+            <h1 className=' text-xl mt-3 sm:text-3xl'>BCA</h1>
         </div>
         <div className=' flex justify-center items-center px-0 sm:px-3 ' >
         <div className=' container mt-2 mx-3 mb-6' >
@@ -96,6 +96,8 @@ const Bca = () => {
             {lock? link?<div className='lg:block hidden mt-4 mb-4'>
               <ReactPlayer url={video} controls={true} width={720} height={480}/>
             </div>:"" :""}
+
+                {lock?<button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full ' onClick={()=> navigate('/bcaClassok@24@27')}>Live-Class</button>:""}
             
             <h2 className=' my-2 hero-ag-color p-2 rounded-3xl cursor-pointer mb-4' onClick={()=>setShow(!show)}>Ai Chat Bot</h2>
 

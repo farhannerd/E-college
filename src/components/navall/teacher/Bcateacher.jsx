@@ -4,8 +4,10 @@ import { MCA } from "../../../assets/Assets";
 import axios from "axios";
 import {bcaPaper} from '../../../assets/mcadata'
 import { Link, useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 const Bcateacher = () => {
   const[papers,setPapers]=useState("")
+  const navigate= useNavigate();
   const changePaper=(event)=>{
     setPapers(event.target.value)
     
@@ -24,7 +26,7 @@ const Bcateacher = () => {
 
   const submit=(e)=>{
     // e.preventDefault()
-    axios.post('http://localhost:3000/mcavideos',{"name":video,"link":link,"subtitle":papers,"sub":"bca"})
+    axios.post('http://localhost:3000/mcavideos',{"name":video,"link":link,"subtitle":papers,"sub":"bca","time":"00"})
     .then(res=>alert("Data is Added successfully"))
       .catch(err=>console.log(err))
   }
@@ -75,6 +77,7 @@ const Bcateacher = () => {
                 <button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full '>submit</button>
                 </div>
                 </form>
+                <button className='bg-primary text-white bg-orange-500 cursor-pointer hover:scale-105 duration-300 py-2 px-8 rounded-full ' onClick={()=> navigate('/bcaliveok@24')}>Live-Class</button>
                 <h1>Table</h1>
                 <div className=" flex justify-center">
                 <div className=" container mt-2">
