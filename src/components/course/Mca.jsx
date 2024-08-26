@@ -8,11 +8,21 @@ import {mcaPaper} from '../../assets/mcadata.js'
 import {mcavideos} from '../../assets/mcadata.js'
 
 const Mca = () => {
+
+  useEffect(()=>{
+    axios.get('http://localhost:3000/mcavideos?sub=mca')
+    .then(res => {
+      setTestvideo(res.data)
+    })
+    .catch(err=>console.log(err))
+  },[])
+
   const[sem,setSem]=useState("--sem--")
   const[paper,setPaper]=useState("--paper--")
   const[video,setVideo]=useState("--video--")
   const[link,setLink]=useState(false)
   const[lock,setLock]=useState(false)
+  const[testvideo,setTestvideo]=useState([])
   const[papers,setPapers]=useState([])
   const[videos,setVideos]=useState([])
   const[show,setShow]=useState(false)
@@ -24,7 +34,7 @@ const Mca = () => {
   }
   const changePaper=(event)=>{
     setPaper(event.target.value)
-    setVideos(mcavideos.filter(paper=>paper.subtitle===event.target.value))
+    setVideos(testvideo.filter(paper=>paper.subtitle===event.target.value))
   }
   const changeVideo=(event)=>{
     setLink(true)

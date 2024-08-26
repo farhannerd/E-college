@@ -12,6 +12,27 @@ export const mcaSem=[
         title:'mcasem4',
     },
 ]
+
+export const bcaSem=[
+    {name:'sem1',
+        title:'bcasem1',
+    },
+    {name:'sem2',
+        title:'bcasem2',
+    },
+    {name:'sem3',
+        title:'bcasem3',
+    },
+    {name:'sem4',
+        title:'bcasem4',
+    },
+    {name:'sem5',
+        title:'bcasem5',
+    },
+    {name:'sem6',
+        title:'bcasem6',
+    },
+]
 export const mcaPaper=[
     {
         name: 'Programming Concept with python',
@@ -138,6 +159,195 @@ export const mcaPaper=[
         title:'mcasem4',
         subtitle:'mca Open' 
     }
+    
+]
+
+export const bcaPaper=[
+    {
+        name: 'Digital Electronics',
+        title:'bcasem1',
+        subtitle:'Digital Electronics'
+    },
+    {
+        name:'Business Systems and Applications',
+        title:'bcasem1',
+        subtitle:'Business Systems and Applications'
+    },
+    {
+        name:'Introduction to Programming',
+        title:'bcasem1',
+        subtitle:'Introduction to Programming'
+    },
+    {
+        name:'Mathematics',
+        title:'bcasem1',
+        subtitle:'Mathematics'
+    },
+    {
+        name:'Pc Software',
+        title:'bcasem1',
+        subtitle:'Pc Software'
+    },
+    {
+        name:'Pc Software Lab',
+        title:'bcasem1',
+        subtitle:'Pc Software Lab'
+    },
+    {
+        name:'Programming Lab(c/pascal)',
+        title:'bcasem1',
+        subtitle:'Programming Lab(c/pascal)'
+    },
+    {
+        name:'Computer Architecture and Systems Software',
+        title:'bcasem2',
+        subtitle:'Computer Architecture and Systems Software'
+    },
+    {
+        name:'Information Systems Analysis and Design',
+        title:'bcasem2',
+        subtitle:'Information Systems Analysis and Design'
+    },
+    {
+        name:'Computer Programming',
+        title:'bcasem2',
+        subtitle:'Computer Programming'
+    },
+    {
+        name:'Mathematics 2',
+        title:'bcasem2',
+        subtitle:'Mathematics 2'
+    },
+    {
+        name:'English Language And Communication',
+        title:'bcasem2',
+        subtitle:'English Language And Communication'
+    },
+    {
+        name:'Programming Lab(Visual Basic)',
+        title:'bcasem2',
+        subtitle:'Programming Lab(Visual Basic)'
+    },
+    {
+        name:'Bisness Presentation Lab',
+        title:'bcasem2',
+        subtitle:'Bisness Presentation Lab'
+    },
+    {
+        name:'Operating System',
+        title:'bcasem3',
+        subtitle:'Operating System'
+    },
+    {
+        name:'Data Structures With C',
+        title:'bcasem3',
+        subtitle:'DSA With C'
+    },
+    {
+        name:'Graphics and Internet',
+        title:'bcasem3',
+        subtitle:'Graphics and Internet'
+    },
+    {
+        name:'Mathematics for Computing',
+        title:'bcasem3',
+        subtitle:'Mathematics for Computing'
+    },
+    {
+        name:'Management and Accounting',
+        title:'bcasem3',
+        subtitle:'Management and Accounting'
+    },
+    {
+        name:'Internet and Computer Graphics Lab',
+        title:'bcasem3',
+        subtitle:'Internet and Computer Graphics Lab'
+    },
+    {
+        name:'Programming Lab(DSA with C)',
+        title:'mcasem3',
+        subtitle:'Programming Lab(DSA with C)'
+    },
+    {
+        name:'Data Base Management System',
+        title:'bcasem4',
+        subtitle:'Data Base Management System'
+    },
+    {
+        name:'Object-Oriented Programming with C++ ',
+        title:'bcasem4',
+        subtitle:'Object-Oriented Programming with C++ ' 
+    },
+    {
+        name:'Software Project Management and Quality Assurance',
+        title:'bcasem4',
+        subtitle:'Software Project Management and Quality Assurance' 
+    },
+    {
+        name:'Statistics, Numerical Methods & Algorithms ',
+        title:'bcasem4',
+        subtitle:'Statistics, Numerical Methods & Algorithms ' 
+    },
+    {
+        name:'Environment and Ecology',
+        title:'bcasem4',
+        subtitle:'Environment and Ecology' 
+    },
+    {
+        name:'Database Lab (Oracle)',
+        title:'bcasem4',
+        subtitle:'Database Lab (Oracle)' 
+    },
+    {
+        name:'Computing Lab',
+        title:'bcasem4',
+        subtitle:'Computing Lab' 
+    },
+    {
+        name:'Data Communication & Computer Networks',
+        title:'bcasem5',
+        subtitle:'Data Communication & Computer Networks' 
+    },
+    {
+        name:'Unix and Shell Programming',
+        title:'bcasem5',
+        subtitle:'Unix and Shell Programming' 
+    },
+    {
+        name:'Windows Programming ',
+        title:'bcasem5',
+        subtitle:'Windows Programming' 
+    },
+    {
+        name:'Elective 1',
+        title:'bcasem5',
+        subtitle:'Elective 1' 
+    },
+    {
+        name:'Values and Ethics of Profession',
+        title:'bcasem5',
+        subtitle:'Values and Ethics of Profession' 
+    },
+    {
+        name:'Unix & Networking',
+        title:'bcasem5',
+        subtitle:'Unix & Networking' 
+    },
+    {
+        name:'Minor Project ',
+        title:'bcasem5',
+        subtitle:'Minor Project ' 
+    },
+    {
+        name:'Elective 2',
+        title:'bcasem6',
+        subtitle:'Elective 2' 
+    },
+    {
+        name:'Elective 3',
+        title:'bcasem6',
+        subtitle:'Elective 3' 
+    },
     
 ]
 export const mcavideos=[

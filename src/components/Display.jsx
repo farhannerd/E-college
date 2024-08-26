@@ -15,6 +15,13 @@ import Bba from './course/Bba'
 import Mba from './course/Mba'
 import Course from './course/Course'
 import Search from './search/Search'
+import Teachercourse from './navall/teacher/Teachercourse'
+import Bcateacher from './navall/teacher/Bcateacher'
+import Mcateacher from './navall/teacher/Mcateacher'
+import Btechteacher from './navall/teacher/Btechteacher'
+import Mtechteacher from './navall/teacher/Mtechteacher'
+import Bbateacher from './navall/teacher/Bbateacher'
+import Mbateacher from './navall/teacher/Mbateacher'
 const Display = () => {
   return (
     <div>
@@ -34,6 +41,13 @@ const Display = () => {
         <Route path='/mba' element={<Mba/>} />
         <Route path='/course' element={<Course/>} />
         <Route path='/search' element={<Search/>} />
+        <Route path='/teachercourseok@24' element={<Teachercourse/>} />
+        <Route path='/bcateacherok@24' element={<Bcateacher/>} />
+        <Route path='/mcateacherok@24' element={<Mcateacher/>} />
+        <Route path='/b.techteacherok@24' element={<Btechteacher/>} />
+        <Route path='/m.techteacherok@24' element={<Mtechteacher/>} />
+        <Route path='/bbateacherok@24' element={<Bbateacher/>} />
+        <Route path='/mbateacherok@24' element={<Mbateacher/>} />
       </Routes>
     </div>
   )

@@ -153,7 +153,68 @@ export const PROJECTS = [
         title1:"ijk",
       },
   ];
-
+  export const Tcourse=[
+    {
+      id: 14,
+      name: "BCA(TE)",
+      description:
+        " Bachelor of Computer Applications (BCA) is a three-year undergraduate-level program that primarily focuses on computer applications and software development.",
+      image: projectImage1,
+      Link: "/bcateacherok@24",
+      title:"a",
+      title1:"xt",
+    },
+    {
+      id: 15,
+      name: "MCA(TE)",
+      description:
+        "Master of Computer Applications is well-recognized postgraduate degree is ideal for graduates seeking to specialise in the field of computer applications. ",
+      image: projectImage2,
+      Link: "/mcateacherok@24",
+      title:"a",
+      title1:"xt",
+    },
+    {
+      id: 16,
+      name: "B.Tech(TE)",
+      description:
+        "Bachelor of Technology is a 4-year undergraduate degree program in engineering or technology ",
+      image: projectImage3,
+      Link: "/b.techteacherok@24",
+      title:"a",
+      title1:"xt",
+    },
+    {
+      id: 17,
+      name: "M.Tech(TE)",
+      description:
+        " Masters of Technology is a course that focuses on the advanced study of science and technology.It is a two-year postgraduate programme with four semesters.",
+      image: projectImage4,
+      Link: "/m.techteacherok@24",
+      title:"a",
+      title1:"xt",
+    },
+    {
+      id: 18,
+      name: "BBA(TE)",
+      description:
+        "Bachelor of Business Administration is a course that focuses on the advanced study of Business and Administration. It is a three-year graduate programme with six semesters.",
+      image: projectImage5,
+      Link: "/bbateacherok@24",
+      title:"a",
+      title1:"xt",
+    },
+    {
+      id: 19,
+      name: "MBA(TE)",
+      description:
+        "Masters in Business Administration is a very popular and in-demand course nowadays. Not just in India, the course is also internationally valued and is recognized in other countries too.",
+      image: projectImage6,
+      Link: "/mbateacherok@24",
+      title:"a",
+      title1:"xt",
+    },
+  ]
 
   export const mentors=[
     {
